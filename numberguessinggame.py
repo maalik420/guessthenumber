@@ -15,7 +15,10 @@ def guessing_game(no_of_guesses,):
         guess_by_player = int(input('Now tell me what number I guessed  between 1 and 100'))
         answer = check_the_guess_number(guess_by_player, guessed_by_host,)
         print(answer)
+        print(f'You have {no_of_guesses - 1} guesses left')
         no_of_guesses -= 1
+    if no_of_guesses == 0 and answer != 'You got it!!':
+        print(f'Boom!!! Your attempts are over and the number was {guessed_by_host}')
 
 print(art.logo)
 print('Welcome to the number guessing game!!')

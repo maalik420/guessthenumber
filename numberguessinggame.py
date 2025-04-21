@@ -13,6 +13,9 @@ def guessing_game(no_of_guesses,):
     answer = ''
     while no_of_guesses > 0 and answer != 'You got it!!':
         guess_by_player = int(input('Now tell me what number I guessed  between 1 and 100'))
+        if guess_by_player < 1 or guess_by_player > 100:
+            print('Sorry, but you have guessed the invalid number')
+            break
         answer = check_the_guess_number(guess_by_player, guessed_by_host,)
         print(answer)
         print(f'You have {no_of_guesses - 1} guesses left')
